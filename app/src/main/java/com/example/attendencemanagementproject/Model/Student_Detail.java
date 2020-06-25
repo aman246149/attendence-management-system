@@ -1,5 +1,6 @@
 package com.example.attendencemanagementproject.Model;
 
+
 public class Student_Detail {
     private int id;
     private String name;
@@ -18,7 +19,7 @@ public class Student_Detail {
     public Student_Detail(){}
 
     public Student_Detail( String name, String father_name, int student_id, String course, String branch, int semester, int year, int roll_number, String gender, String phone_number,String dob,String
-    password)
+            password)
     {
         this.name=name;
         this.father_name=father_name;
@@ -97,7 +98,7 @@ public class Student_Detail {
     }
 
     public void setGender(String gender) {
-       this.gender = gender;
+        this.gender = gender;
     }
 
     public int getRoll_number() {
