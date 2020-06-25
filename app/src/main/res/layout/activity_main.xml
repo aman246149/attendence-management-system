@@ -35,7 +35,7 @@
         app:srcCompat="@drawable/student" />
 
     <RadioGroup
-        android:id="@+id/radioGroup"
+        android:id="@+id/radioGroupid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -46,7 +46,7 @@
         app:layout_constraintVertical_bias="0.0">
 
         <RadioButton
-            android:id="@+id/radioButton3"
+            android:id="@+id/adminid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:checked="true"
@@ -55,7 +55,7 @@
             android:textStyle="bold" />
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/teacherid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Teacher"
@@ -63,7 +63,7 @@
             android:textStyle="bold" />
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/studentid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Student"
@@ -72,7 +72,7 @@
     </RadioGroup>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/continueid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="80dp"
@@ -85,5 +85,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupid" />
 </androidx.constraintlayout.widget.ConstraintLayout>
