@@ -1,6 +1,6 @@
 package com.example.attendencemanagementproject.Util;
 
-public class Util {
+public class Util_Student {
     //Database related items
     public static final int DATABASE_VERSION = 1;
     public static final String DATABASE_NAME = "Student_db";

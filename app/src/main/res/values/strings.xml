@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AttendenceManagementProject</string>
+    <string name="DROP_TABLE">DROP TABLE IF EXISTS</string>
 </resources>
