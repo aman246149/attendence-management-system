@@ -1,4 +1,5 @@
-package com.example.attendencemanagementproject;
+package com.example.attendencemanagementproject.Modle;
+
 public class Student_Detail {
     private int id;
     private String name;

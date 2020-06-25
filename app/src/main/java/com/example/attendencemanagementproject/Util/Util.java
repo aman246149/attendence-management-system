@@ -1,4 +1,5 @@
-package com.example.attendencemanagementproject;
+package com.example.attendencemanagementproject.Util;
+
 public class Util {
     //Database related items
     public static final int DATABASE_VERSION = 1;

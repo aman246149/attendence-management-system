@@ -1,4 +1,4 @@
-package com.example.attendencemanagementproject;
+package com.example.attendencemanagementproject.data;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -6,20 +6,23 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.send_app.attendence_system.R;
-import com.send_app.attendence_system.model.Student_Detail;
-import com.send_app.attendence_system.util.Util;
+import com.example.attendencemanagementproject.Modle.Student_Detail;
+import com.example.attendencemanagementproject.Util.Util;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static java.lang.String.format;
+import static com.example.attendencemanagementproject.Util.Util.DATABASE_NAME;
+import static com.example.attendencemanagementproject.Util.Util.DATABASE_VERSION;
+import static com.example.attendencemanagementproject.Util.Util.KEY_ID;
+import static com.example.attendencemanagementproject.Util.Util.KEY_STUDENT_ID;
+import static com.example.attendencemanagementproject.Util.Util.TABLE_NAME;
 
 public class DATABASE_HANDLER_Student extends SQLiteOpenHelper {
 
 
     public DATABASE_HANDLER_Student(Context context) {
-        super(context, Util.DATABASE_NAME, null, Util.DATABASE_VERSION);
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
     // we create our table
     @Override
@@ -28,15 +31,15 @@ public class DATABASE_HANDLER_Student extends SQLiteOpenHelper {
          Util.TABLE_NAME,Util.KEY_INDEX, Util.KEY_STUDENT_ID, Util.KEY_STUDENT_NAME, Util.KEY_PHONE_NUMBER, Util.KEY_FATHER_NAME, Util.KEY_BRANCH, Util.KEY_GENDER, Util.KEY_ROLL_NUMBER, Util.KEY_YEAR, Util.KEY_SEMESTER,Util.KEY_STUDENT_COURSE,Util.KEY_DOB,Util.KEY_PASSWORD
          */
 
-        String CREATE_CONTACT_TABLE = "CREATE TABLE "+Util.TABLE_NAME+"("+ Util.KEY_ID+" INTEGER PRIMARY KEY,"+Util.KEY_STUDENT_ID+" INTEGER UNIQUE,"+Util.KEY_STUDENT_NAME+" TEXT,"+Util.KEY_PHONE_NUMBER
-                                       +" TEXT,"+Util.KEY_FATHER_NAME+" TEXT,"+Util.KEY_BRANCH+" TEXT,"+Util.KEY_GENDER+" TEXT,"+Util.KEY_ROLL_NUMBER+" INTEGER,"+Util.KEY_YEAR+" INTEGER,"+Util.KEY_SEMESTER+" INTEGER,"
-                +Util.KEY_STUDENT_COURSE+" TEXT,"+Util.KEY_DOB+" TEXT,"+Util.KEY_PASSWORD+" TEXT" +")";
+        String CREATE_CONTACT_TABLE = "CREATE TABLE "+ TABLE_NAME+"("+ KEY_ID+" INTEGER PRIMARY KEY,"+ KEY_STUDENT_ID+" INTEGER UNIQUE,"+ Util.KEY_STUDENT_NAME+" TEXT,"+ Util.KEY_PHONE_NUMBER
+                                       +" TEXT,"+ Util.KEY_FATHER_NAME+" TEXT,"+ Util.KEY_BRANCH+" TEXT,"+ Util.KEY_GENDER+" TEXT,"+ Util.KEY_ROLL_NUMBER+" INTEGER,"+ Util.KEY_YEAR+" INTEGER,"+ Util.KEY_SEMESTER+" INTEGER,"
+                + Util.KEY_STUDENT_COURSE+" TEXT,"+ Util.KEY_DOB+" TEXT,"+ Util.KEY_PASSWORD+" TEXT" +")";
         db.execSQL(CREATE_CONTACT_TABLE);//to create table
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        String DROP_TABLE = String.valueOf(R.string.DROP_TABLE);
+        String DROP_TABLE = String.valueOf("DROP TABLE IF EXISTS");
         db.execSQL(DROP_TABLE, new String[]{Util.DATABASE_NAME});
         //to Create a table again
         onCreate(db);
