@@ -1,4 +1,4 @@
-package com.example.attendencemanagementproject.Modle;
+package com.example.attendencemanagementproject.Model;
 
 public class Student_Detail {
     private int id;

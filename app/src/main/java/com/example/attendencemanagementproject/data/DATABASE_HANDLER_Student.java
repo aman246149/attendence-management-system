@@ -6,7 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.example.attendencemanagementproject.Modle.Student_Detail;
+import com.example.attendencemanagementproject.Model.Student_Detail;
 import com.example.attendencemanagementproject.Util.Util;
 
 import java.util.ArrayList;
