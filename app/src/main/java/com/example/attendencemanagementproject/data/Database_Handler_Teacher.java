@@ -8,10 +8,13 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import com.example.attendencemanagementproject.Model.Teacher_Detail;
 import com.example.attendencemanagementproject.R;
+import com.example.attendencemanagementproject.Util.Util_Student;
 import com.example.attendencemanagementproject.Util.Util_Teacher;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.example.attendencemanagementproject.Util.Util_Student.KEY_STUDENT_ID;
 
 
 public class Database_Handler_Teacher extends SQLiteOpenHelper {
@@ -146,6 +149,21 @@ public class Database_Handler_Teacher extends SQLiteOpenHelper {
             return false;
         }
     }
+    public boolean if_avilable(String teacher_Id)
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String selectAll = "SELECT "+ Util_Teacher.KEY_TEACHER_ID+" FROM " + Util_Teacher.TABLE_NAME +" where " + Util_Teacher.KEY_TEACHER_ID+ " =? ";
+        String[] selectionArgs = {teacher_Id };
+        Cursor cursor = db.rawQuery(selectAll, selectionArgs);
+        if(cursor.getCount()<=0)
+        {
+            cursor.close();
+            return false;
+        }
+        cursor.close();
+        return true;
+    }
+
 
 }
 
