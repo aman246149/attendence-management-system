@@ -33,11 +33,13 @@ public class StudentActivity extends AppCompatActivity {
 
 
 
+
         studentlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String id=studentid.getText().toString().trim();
-                String pass=studentlogin.getText().toString().trim();
+
+                 String id= studentid.getText().toString().trim();
+                 String pass=studentlogin.getText().toString().trim();
 
                 Log.d("id", "onClick: " + id);
                    boolean passwardchecker=db.check_Password(id,pass);
@@ -50,6 +52,9 @@ public class StudentActivity extends AppCompatActivity {
                    }
                    else
                        wrongidvie.setText("ID AND PASSWARD NOT CORRECT");
+                Intent intent=new Intent(StudentActivity.this,StudentAttendenceView.class);
+                intent.putExtra("studekey", id);
+                startActivity(intent);
 
 
 
