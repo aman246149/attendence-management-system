@@ -17,7 +17,9 @@ public class StudentActivity extends AppCompatActivity {
     private EditText studentid;
     private EditText studentPass;
     private Button  studentlogin;
-   // private TextView wrongidvie;
+    boolean passwardchecker;
+    boolean id_checker;
+    // private TextView wrongidvie;
     DATABASE_HANDLER_Student db=new DATABASE_HANDLER_Student(StudentActivity.this);
 
 
@@ -29,37 +31,33 @@ public class StudentActivity extends AppCompatActivity {
         studentid=findViewById(R.id.stuloginid);
         studentPass=findViewById(R.id.stuloginpassward);
         studentlogin=findViewById(R.id.loginbuttonstudentid);
-    //    wrongidvie=findViewById(R.id.wrongid);
-
+        //    wrongidvie=findViewById(R.id.wrongid);
 
 
 
         studentlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
-
                 String id=studentid.getText().toString();
                 String pass=studentPass.getText().toString();
 
                 Log.d("id", "onClick: " + id);
-                   boolean passwardchecker=db.check_Password(id,pass);
+                id_checker=db.if_avilable(id);
+                if(id_checker) {
+                    passwardchecker = db.check_Password(id, pass);
 
-                   if (passwardchecker)
-                   {
-                       Intent intent=new Intent(StudentActivity.this,StudentAttendenceView.class);
-                       intent.putExtra("stu_key", id);
-                       startActivity(intent);
-                   }
-                   else
+                    if (passwardchecker) {
+                        Intent intent = new Intent(StudentActivity.this, StudentAttendenceView.class);
+                        intent.putExtra("stu_key", id);
+                        startActivity(intent);
+                    } else
+                        Toast.makeText(StudentActivity.this, "wrong password", Toast.LENGTH_SHORT).show();
 
-
-                    //   wrongidvie.setText("ID AND PASSWARD NOT CORRECT");
-                         Toast.makeText(StudentActivity.this,"wrong",Toast.LENGTH_SHORT).show();
-
-
-
+                }
+                else
+                {
+                    Toast.makeText(StudentActivity.this, "wrong student id", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
