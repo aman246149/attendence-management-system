@@ -8,7 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.attendencemanagementproject.data.DATABASE_HANDLER_Student;
 
@@ -17,7 +17,7 @@ public class StudentActivity extends AppCompatActivity {
     private EditText studentid;
     private EditText studentPass;
     private Button  studentlogin;
-    private TextView wrongidvie;
+   // private TextView wrongidvie;
     DATABASE_HANDLER_Student db=new DATABASE_HANDLER_Student(StudentActivity.this);
 
 
@@ -29,15 +29,15 @@ public class StudentActivity extends AppCompatActivity {
         studentid=findViewById(R.id.stuloginid);
         studentPass=findViewById(R.id.stuloginpassward);
         studentlogin=findViewById(R.id.loginbuttonstudentid);
-        wrongidvie=findViewById(R.id.wrongid);
+    //    wrongidvie=findViewById(R.id.wrongid);
 
 
 
         studentlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String id=studentid.getText().toString().trim();
-                String pass=studentPass.getText().toString().trim();
+                String id=studentid.getText().toString();
+                String pass=studentPass.getText().toString();
 
                 Log.d("id", "onClick: " + id);
                    boolean passwardchecker=db.check_Password(id,pass);
@@ -45,12 +45,12 @@ public class StudentActivity extends AppCompatActivity {
                    if (passwardchecker)
                    {
                        Intent intent=new Intent(StudentActivity.this,StudentAttendenceView.class);
-                       intent.putExtra("studekey", id);
+                       intent.putExtra("stu_key", id);
                        startActivity(intent);
                    }
                    else
-                       wrongidvie.setText("ID AND PASSWARD NOT CORRECT");
-
+                    //   wrongidvie.setText("ID AND PASSWARD NOT CORRECT");
+                         Toast.makeText(StudentActivity.this,"wrong",Toast.LENGTH_SHORT).show();
 
 
             }
