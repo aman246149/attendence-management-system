@@ -194,5 +194,19 @@ public class DATABASE_HANDLER_Student extends SQLiteOpenHelper {
             return false;
         }
     }
+    public boolean if_avilable(String student_id)
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String selectAll = "SELECT "+ KEY_STUDENT_ID+" FROM " + Util_Student.TABLE_NAME +" where " + KEY_STUDENT_ID + " =? ";
+        String[] selectionArgs = { student_id };
+        Cursor cursor = db.rawQuery(selectAll, selectionArgs);
+        if(cursor.getCount()<=0)
+        {
+            cursor.close();
+            return false;
+        }
+        cursor.close();
+        return true;
+    }
 
 }

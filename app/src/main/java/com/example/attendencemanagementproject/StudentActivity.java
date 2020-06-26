@@ -17,6 +17,8 @@ public class StudentActivity extends AppCompatActivity {
     private EditText studentid;
     private EditText studentPass;
     private Button  studentlogin;
+    boolean passwardchecker;
+    boolean id_checker;
    // private TextView wrongidvie;
     DATABASE_HANDLER_Student db=new DATABASE_HANDLER_Student(StudentActivity.this);
 
@@ -40,19 +42,22 @@ public class StudentActivity extends AppCompatActivity {
                 String pass=studentPass.getText().toString();
 
                 Log.d("id", "onClick: " + id);
-                   boolean passwardchecker=db.check_Password(id,pass);
+                    id_checker=db.if_avilable(id);
+                    if(id_checker) {
+                        passwardchecker = db.check_Password(id, pass);
 
-                   if (passwardchecker)
-                   {
-                       Intent intent=new Intent(StudentActivity.this,StudentAttendenceView.class);
-                       intent.putExtra("stu_key", id);
-                       startActivity(intent);
-                   }
-                   else
-                    //   wrongidvie.setText("ID AND PASSWARD NOT CORRECT");
-                         Toast.makeText(StudentActivity.this,"wrong",Toast.LENGTH_SHORT).show();
+                        if (passwardchecker) {
+                            Intent intent = new Intent(StudentActivity.this, StudentAttendenceView.class);
+                            intent.putExtra("stu_key", id);
+                            startActivity(intent);
+                        } else
+                            Toast.makeText(StudentActivity.this, "wrong password", Toast.LENGTH_SHORT).show();
 
-
+                    }
+                    else
+                    {
+                        Toast.makeText(StudentActivity.this, "wrong student id", Toast.LENGTH_SHORT).show();
+                    }
             }
         });
     }
