@@ -37,7 +37,7 @@ public class StudentActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String id=studentid.getText().toString().trim();
-                String pass=studentlogin.getText().toString().trim();
+                String pass=studentPass.getText().toString().trim();
 
                 Log.d("id", "onClick: " + id);
                    boolean passwardchecker=db.check_Password(id,pass);

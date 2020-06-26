@@ -49,8 +49,8 @@ public class StudentAttendenceView extends AppCompatActivity {
         viewDOb=findViewById(R.id.viewdob);
         viewPAssward=findViewById(R.id.viewpassward);
 
-        Intent intent=new Intent();
-       String stuid= intent.getStringExtra("studekey");
+        Intent intent=getIntent();
+        String stuid= intent.getStringExtra("studekey");
 
         Log.d("stuid", "onCreate: " + stuid);
 
