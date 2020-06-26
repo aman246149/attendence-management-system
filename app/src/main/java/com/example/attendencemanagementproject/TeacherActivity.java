@@ -15,7 +15,7 @@ public class TeacherActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher);
 
-        LoginButton=findViewById(R.id.LoginButton);
+        LoginButton=findViewById(R.id.loginbuttonstudentid);
 
         LoginButton.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -11,16 +11,14 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:fontFamily="sans-serif-black"
         android:text="Please choose who  you are"
         android:textColor="#000000"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.529" />
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -40,10 +38,9 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
 
         <RadioButton
             android:id="@+id/adminid"
@@ -51,7 +48,7 @@
             android:layout_height="wrap_content"
             android:checked="true"
             android:text="Admin"
-            android:textSize="18sp"
+            android:textSize="12sp"
             android:textStyle="bold" />
 
         <RadioButton
@@ -59,7 +56,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Teacher"
-            android:textSize="18sp"
+            android:textSize="12sp"
             android:textStyle="bold" />
 
         <RadioButton
@@ -67,7 +64,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Student"
-            android:textSize="18sp"
+            android:textSize="12sp"
             android:textStyle="bold" />
     </RadioGroup>
 
@@ -75,7 +72,6 @@
         android:id="@+id/continueid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="80dp"
         android:background="@drawable/rounded_button"
         android:padding="10dp"
         android:text="Continue"
@@ -83,7 +79,8 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroupid" />
+        app:layout_constraintEnd_toEndOf="@+id/radioGroupid"
+        app:layout_constraintStart_toStartOf="@+id/radioGroupid"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupid"
+        app:layout_constraintVertical_bias="0.38" />
 </androidx.constraintlayout.widget.ConstraintLayout>

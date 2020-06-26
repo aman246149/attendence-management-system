@@ -14,7 +14,7 @@
         android:fontFamily="@font/comfortaa_light"
         android:text="ATTENDENCE REGISTER"
         android:textColor="#000000"
-        android:textSize="24sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
@@ -30,6 +30,7 @@
         android:hint="student name"
         android:inputType="textPersonName"
         android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/studentid"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.472"
         app:layout_constraintStart_toEndOf="@+id/studentid"
@@ -39,26 +40,28 @@
         android:id="@+id/studentid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="36dp"
         android:ems="10"
         android:hint="Student id"
         android:inputType="textPersonName"
         android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline" />
+        app:layout_constraintTop_toTopOf="@+id/guideline"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/phoneNumberID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
         android:layout_marginTop="32dp"
         android:ems="10"
         android:hint="Ph No"
         android:inputType="textPersonName"
         android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/studentid"
+        app:layout_constraintStart_toStartOf="@+id/studentid"
         app:layout_constraintTop_toBottomOf="@+id/studentid" />
 
     <EditText
@@ -71,22 +74,24 @@
         android:hint="Fathers Name"
         android:inputType="textPersonName"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.925"
-        app:layout_constraintStart_toEndOf="@+id/phoneNumberID"
-        app:layout_constraintTop_toBottomOf="@+id/studentnameid" />
+        app:layout_constraintBottom_toBottomOf="@+id/phoneNumberID"
+        app:layout_constraintEnd_toEndOf="@+id/studentnameid"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/studentnameid"
+        app:layout_constraintTop_toBottomOf="@+id/studentnameid"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/stuCourseid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
         android:layout_marginTop="24dp"
         android:ems="10"
         android:hint="Student course"
         android:inputType="textPersonName"
         android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/phoneNumberID"
+        app:layout_constraintStart_toStartOf="@+id/phoneNumberID"
         app:layout_constraintTop_toBottomOf="@+id/phoneNumberID" />
 
     <EditText
@@ -98,63 +103,64 @@
         android:hint="semester"
         android:inputType="textPersonName"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/stuCourseid"
+        app:layout_constraintEnd_toEndOf="@+id/FatherNameid"
         app:layout_constraintHorizontal_bias="0.454"
-        app:layout_constraintStart_toEndOf="@+id/stuCourseid"
+        app:layout_constraintStart_toStartOf="@+id/FatherNameid"
         app:layout_constraintTop_toBottomOf="@+id/FatherNameid" />
 
     <EditText
         android:id="@+id/stuyearId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
         android:layout_marginTop="28dp"
         android:ems="10"
         android:hint="year"
         android:inputType="textPersonName"
         android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/stuCourseid"
+        app:layout_constraintStart_toStartOf="@+id/stuCourseid"
         app:layout_constraintTop_toBottomOf="@+id/stuCourseid" />
 
     <EditText
         android:id="@+id/StugenderId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
         android:layout_marginTop="28dp"
         android:ems="10"
         android:hint="gender"
         android:inputType="textPersonName"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/stuyearId"
+        app:layout_constraintEnd_toEndOf="@+id/stuSemid"
         app:layout_constraintHorizontal_bias="0.142"
-        app:layout_constraintStart_toEndOf="@+id/stuyearId"
+        app:layout_constraintStart_toStartOf="@+id/stuSemid"
         app:layout_constraintTop_toBottomOf="@+id/stuSemid" />
 
     <EditText
         android:id="@+id/StuRollNoid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
         android:layout_marginTop="24dp"
         android:ems="10"
         android:hint="Roll No"
         android:inputType="textPersonName"
         android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/stuyearId"
+        app:layout_constraintStart_toStartOf="@+id/stuyearId"
         app:layout_constraintTop_toBottomOf="@+id/stuyearId" />
 
     <EditText
         android:id="@+id/StudobId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
         android:layout_marginTop="24dp"
         android:ems="10"
         android:hint="DOB"
         android:inputType="textPersonName"
         android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/StuRollNoid"
+        app:layout_constraintStart_toStartOf="@+id/StuRollNoid"
         app:layout_constraintTop_toBottomOf="@+id/StuRollNoid" />
 
     <EditText
@@ -166,9 +172,10 @@
         android:hint="Passward"
         android:inputType="textPersonName"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/StudobId"
+        app:layout_constraintEnd_toEndOf="@+id/StuBranchId"
         app:layout_constraintHorizontal_bias="0.454"
-        app:layout_constraintStart_toEndOf="@+id/StudobId"
+        app:layout_constraintStart_toStartOf="@+id/StuBranchId"
         app:layout_constraintTop_toBottomOf="@+id/StuBranchId" />
 
     <EditText
@@ -180,9 +187,10 @@
         android:hint="branch"
         android:inputType="textPersonName"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/StuRollNoid"
+        app:layout_constraintEnd_toEndOf="@+id/StugenderId"
         app:layout_constraintHorizontal_bias="0.454"
-        app:layout_constraintStart_toEndOf="@+id/StuRollNoid"
+        app:layout_constraintStart_toStartOf="@+id/StugenderId"
         app:layout_constraintTop_toBottomOf="@+id/StugenderId" />
 
     <androidx.constraintlayout.widget.Guideline
@@ -190,27 +198,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="137dp" />
-
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-black"
-        android:text="PLEASE ENTER STUDENT DETAILS HERE"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/guideline"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintGuide_begin="70dp" />
 
     <Button
         android:id="@+id/StuSaveBTNid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="68dp"
+        android:layout_marginBottom="44dp"
         android:background="@drawable/rounded_button"
         android:text="SAVE"
         android:textColor="#FFFFFF"
@@ -219,6 +213,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/StudobId"
         app:layout_constraintVertical_bias="1.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

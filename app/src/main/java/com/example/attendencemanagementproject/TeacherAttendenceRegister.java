@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.attendencemanagementproject.Model.Student_Detail;
 import com.example.attendencemanagementproject.data.DATABASE_HANDLER_Student;
 
 

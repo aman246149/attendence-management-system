@@ -3,18 +3,18 @@ package com.example.attendencemanagementproject.Model;
 
 public class Student_Detail {
     private int id;
-    private String name;
-    private String father_name;
-    private int Student_id;
-    private String course;
-    private int semester;
-    private int year;
-    private String gender;
-    private int roll_number;
-    private String branch;
-    private String phone_number;
-    private String dob;
-    private String password;
+    private String name; //PRESENT
+    private String father_name; //PRESENT
+    private int Student_id; //PRESENT
+    private String course; //PRESENT
+    private int semester; //PRESENT
+    private int year;  //PRESENT
+    private String gender; //PRESENT
+    private int roll_number; //PRESENT
+    private String branch; //PRESENT
+    private String phone_number; //PRESENT
+    private String dob;  //PRESENT
+    private String password; //PRESENT
 
     public Student_Detail(){}
 
