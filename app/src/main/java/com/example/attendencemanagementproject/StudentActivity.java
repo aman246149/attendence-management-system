@@ -28,8 +28,8 @@ public class StudentActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student);
 
-        studentid=findViewById(R.id.stuloginid);
-        studentPass=findViewById(R.id.stuloginpassward);
+        studentid=findViewById(R.id.studentloginid);
+        studentPass=findViewById(R.id.studentloginpassward);
         studentlogin=findViewById(R.id.loginbuttonStudentid);
         //    wrongidvie=findViewById(R.id.wrongid);
 

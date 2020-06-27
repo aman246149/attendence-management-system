@@ -40,19 +40,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
-        android:layout_marginTop="104dp"
+        android:layout_marginTop="84dp"
         android:fontFamily="monospace"
         android:text="PASSWARD"
         android:textColor="#000000"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/stuloginpassward"
-        app:layout_constraintHorizontal_bias="0.709"
+        app:layout_constraintEnd_toStartOf="@+id/admin_login_passward"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <EditText
-        android:id="@+id/adminloginid"
+        android:id= "@+id/admin_log_in_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="68dp"
@@ -65,31 +65,30 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <EditText
-        android:id="@+id/adminloginpassward"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="252dp"
+        android:id="@+id/admin_login_passward"
+        android:layout_width="209dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="28dp"
         android:ems="10"
         android:hint="your passward"
         android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/stuloginid"
-        app:layout_constraintVertical_bias="0.205" />
+        app:layout_constraintTop_toBottomOf="@id/admin_log_in_id"
+        app:layout_constraintVertical_bias="0.163" />
 
     <Button
-        android:id="@+id/loginbuttonStudentid"
+        android:id="@+id/loginbuttonAdminid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="144dp"
         android:background="@drawable/rounded_button"
         android:text="LOGIN"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/stuloginpassward" />
+        app:layout_constraintTop_toBottomOf="@+id/admin_login_passward" />
 
     <TextView
         android:id="@+id/textView5"
@@ -102,7 +101,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginbuttonteacherid"
+        app:layout_constraintTop_toBottomOf="@+id/loginbuttonAdminid"
         app:layout_constraintVertical_bias="0.196" />
 
     <ImageView
