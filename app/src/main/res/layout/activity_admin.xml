@@ -39,7 +39,8 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="92dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="104dp"
         android:fontFamily="monospace"
         android:text="PASSWARD"
         android:textColor="#000000"
@@ -51,7 +52,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <EditText
-        android:id="@+id/stuloginid"
+        android:id="@+id/adminloginid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="68dp"
@@ -64,10 +65,11 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <EditText
-        android:id="@+id/stuloginpassward"
+        android:id="@+id/adminloginpassward"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="40dp"
+        android:layout_marginBottom="252dp"
         android:ems="10"
         android:hint="your passward"
         android:inputType="textPassword"
@@ -77,7 +79,7 @@
         app:layout_constraintVertical_bias="0.205" />
 
     <Button
-        android:id="@+id/loginbuttonstudentid"
+        android:id="@+id/loginbuttonStudentid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
@@ -100,7 +102,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginbuttonstudentid"
+        app:layout_constraintTop_toBottomOf="@+id/loginbuttonteacherid"
         app:layout_constraintVertical_bias="0.196" />
 
     <ImageView

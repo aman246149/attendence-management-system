@@ -47,13 +47,13 @@
         android:textColor="#000000"
         android:textSize="10sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/loginbuttonstudentid"
+        app:layout_constraintBottom_toTopOf="@+id/loginbuttonteacherid"
         app:layout_constraintEnd_toEndOf="@+id/textView3"
         app:layout_constraintStart_toStartOf="@+id/textView3"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <Button
-        android:id="@+id/loginbuttonstudentid"
+        android:id="@+id/loginbuttonStudentid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="128dp"

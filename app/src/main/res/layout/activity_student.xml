@@ -50,7 +50,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <EditText
-        android:id="@+id/stuloginid"
+        android:id="@+id/adminloginid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
@@ -64,7 +64,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline5" />
 
     <EditText
-        android:id="@+id/stuloginpassward"
+        android:id="@+id/adminloginpassward"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
@@ -79,7 +79,7 @@
         app:layout_constraintTop_toBottomOf="@+id/stuloginid" />
 
     <Button
-        android:id="@+id/loginbuttonstudentid"
+        android:id="@+id/loginbuttonStudentid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="28dp"

@@ -15,10 +15,12 @@ public class Student_Detail {
     private String phone_number; //PRESENT
     private String dob;  //PRESENT
     private String password; //PRESENT
+    private int attendence=0;
 
     public Student_Detail(){}
 
-    public Student_Detail( String name, String father_name, int student_id, String course, String branch, int semester, int year, int roll_number, String gender, String phone_number,String dob,String
+
+    public Student_Detail(String name, String father_name, int student_id, String course, String branch, int semester, int year, int roll_number, String gender, String phone_number, String dob, String
             password)
     {
         this.name=name;
@@ -34,6 +36,13 @@ public class Student_Detail {
         this.dob=dob;
         this.password=password;
 
+    }
+    public int getAttendence() {
+        return attendence;
+    }
+
+    public void setAttendence(int attendence) {
+        this.attendence = attendence;
     }
 
     public int getId() {

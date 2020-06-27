@@ -15,6 +15,7 @@ import java.util.List;
 
 import static com.example.attendencemanagementproject.Util.Util_Student.DATABASE_NAME;
 import static com.example.attendencemanagementproject.Util.Util_Student.DATABASE_VERSION;
+import static com.example.attendencemanagementproject.Util.Util_Student.KEY_ATTENDANCE;
 import static com.example.attendencemanagementproject.Util.Util_Student.KEY_ID;
 import static com.example.attendencemanagementproject.Util.Util_Student.KEY_STUDENT_ID;
 import static com.example.attendencemanagementproject.Util.Util_Student.TABLE_NAME;
@@ -34,7 +35,7 @@ public class DATABASE_HANDLER_Student extends SQLiteOpenHelper {
 
         String CREATE_STUDENT_TABLE = "CREATE TABLE "+Util_Student.TABLE_NAME+"("+ Util_Student.KEY_ID+" INTEGER PRIMARY KEY,"+ Util_Student.KEY_STUDENT_ID+" INTEGER UNIQUE,"+ Util_Student.KEY_STUDENT_NAME+" TEXT,"+ Util_Student.KEY_PHONE_NUMBER
                                        +" TEXT,"+ Util_Student.KEY_FATHER_NAME+" TEXT,"+ Util_Student.KEY_BRANCH+" TEXT,"+ Util_Student.KEY_GENDER+" TEXT,"+ Util_Student.KEY_ROLL_NUMBER+" INTEGER,"+ Util_Student.KEY_YEAR+" INTEGER,"+ Util_Student.KEY_SEMESTER+" INTEGER,"
-                + Util_Student.KEY_STUDENT_COURSE+" TEXT,"+ Util_Student.KEY_DOB+" TEXT,"+ Util_Student.KEY_PASSWORD+" TEXT" +")";
+                + Util_Student.KEY_STUDENT_COURSE+" TEXT,"+ Util_Student.KEY_DOB+" TEXT,"+ Util_Student.KEY_PASSWORD+" TEXT,"+Util_Student.KEY_ATTENDANCE+" INTEGER" +")";
         db.execSQL(CREATE_STUDENT_TABLE);//to create table
     }
 
@@ -62,6 +63,7 @@ public class DATABASE_HANDLER_Student extends SQLiteOpenHelper {
         values.put(Util_Student.KEY_YEAR,student_detail.getYear());
         values.put(Util_Student.KEY_DOB,student_detail.getDob());
         values.put(Util_Student.KEY_PASSWORD,student_detail.getPassword());
+        values.put(KEY_ATTENDANCE,student_detail.getAttendence());
         db.insert(Util_Student.TABLE_NAME,null,values);
         db.close();
     }
@@ -103,6 +105,7 @@ public class DATABASE_HANDLER_Student extends SQLiteOpenHelper {
         student_detail.setCourse(cursor.getString(10));
         student_detail.setDob(cursor.getString(11));
         student_detail.setPassword(cursor.getString(12));
+        student_detail.setAttendence(Integer.parseInt(cursor.getString(13)));
         return student_detail;
     }
     //to get all student detail
@@ -128,6 +131,7 @@ public class DATABASE_HANDLER_Student extends SQLiteOpenHelper {
                 student_detail.setCourse(cursor.getString(10));
                 student_detail.setDob(cursor.getString(11));
                 student_detail.setPassword(cursor.getString(12));
+                student_detail.setAttendence(Integer.parseInt(cursor.getString(13)));
                 student_detailList.add(student_detail);
             } while (cursor.moveToNext());
         }
@@ -150,9 +154,9 @@ public class DATABASE_HANDLER_Student extends SQLiteOpenHelper {
         values.put(Util_Student.KEY_YEAR,student_detail.getYear());
         values.put(Util_Student.KEY_DOB,student_detail.getDob());
         values.put(Util_Student.KEY_PASSWORD,student_detail.getPassword());
-        return db.update(Util_Student.TABLE_NAME,values, Util_Student.KEY_STUDENT_ID+"=?",
+        return db.update(Util_Student.TABLE_NAME,values, Util_Student.KEY_STUDENT_ID+" =?",
                 new String[]{String.valueOf(student_detail.getStudent_id())});
-    }
+}
     //TO delete a Student detail
     public void delete_Stu_detail(Student_Detail student_detail)
     {
@@ -208,5 +212,30 @@ public class DATABASE_HANDLER_Student extends SQLiteOpenHelper {
         cursor.close();
         return true;
     }
+    public String get_Attendence(String student_id)
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String selectAll = "SELECT "+ KEY_ATTENDANCE+" FROM " + Util_Student.TABLE_NAME +" where " + KEY_STUDENT_ID + " =? ";
+        String[] selectionArgs = { student_id };
+        Cursor cursor = db.rawQuery(selectAll, selectionArgs);
+        if(cursor!=null)
+            cursor.moveToNext();
+        assert cursor != null;
+        String check_attendence = cursor.getString(cursor.getColumnIndex(KEY_ATTENDANCE));
+        cursor.close();
+        return check_attendence;
+
+    }
+    public int add_Attendence(String student_id)
+    {
+        String stu_attdence = get_Attendence(student_id);
+        int update_attdence = Integer.parseInt(stu_attdence)+1;
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(KEY_ATTENDANCE,update_attdence);
+        return db.update(TABLE_NAME,values, KEY_STUDENT_ID+" =? ",new String[]{student_id});
+    }
+
+
 
 }

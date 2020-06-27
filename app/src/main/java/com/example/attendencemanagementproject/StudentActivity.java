@@ -30,7 +30,7 @@ public class StudentActivity extends AppCompatActivity {
 
         studentid=findViewById(R.id.stuloginid);
         studentPass=findViewById(R.id.stuloginpassward);
-        studentlogin=findViewById(R.id.loginbuttonstudentid);
+        studentlogin=findViewById(R.id.loginbuttonStudentid);
         //    wrongidvie=findViewById(R.id.wrongid);
 
 
@@ -38,8 +38,8 @@ public class StudentActivity extends AppCompatActivity {
         studentlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String id=studentid.getText().toString();
-                String pass=studentPass.getText().toString();
+                String id=studentid.getText().toString().trim();
+                String pass=studentPass.getText().toString().trim();
 
                 Log.d("id", "onClick: " + id);
                 id_checker=db.if_avilable(id);

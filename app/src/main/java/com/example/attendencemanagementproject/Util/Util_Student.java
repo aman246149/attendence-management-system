@@ -18,5 +18,6 @@ public class Util_Student {
     public static final String KEY_ROLL_NUMBER="roll_number";
     public static final String KEY_BRANCH="branch";
     public static final String KEY_DOB="DOB";
+    public static final String KEY_ATTENDANCE ="attendance";
     public static final String KEY_PASSWORD ="password";
 }
