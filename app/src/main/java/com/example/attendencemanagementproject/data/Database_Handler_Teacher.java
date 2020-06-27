@@ -34,7 +34,7 @@ public class Database_Handler_Teacher extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         String DROP_TABLE = String.valueOf(R.string.DROP_TABLE);
-        db.execSQL(DROP_TABLE, new String[]{DROP_TABLE});
+        db.execSQL(DROP_TABLE, new String[]{Util_Teacher.TABLE_NAME});
         //to Create a table again
         onCreate(db);
     }

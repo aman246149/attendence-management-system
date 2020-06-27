@@ -5,7 +5,7 @@ public class Util_Student {
     public static final int DATABASE_VERSION = 1;
     public static final String DATABASE_NAME = "Student_db";
     public static final String TABLE_NAME = "Student";
-    //contacts table columns names
+    //student table columns names
     public static final String KEY_ID="id";
     public static final String KEY_STUDENT_ID = "stu_id";
     public static final String KEY_STUDENT_NAME = "stu_name";
