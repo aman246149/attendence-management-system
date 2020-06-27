@@ -15,7 +15,7 @@
         android:fontFamily="sans-serif-black"
         android:text="Please choose who  you are"
         android:textColor="#000000"
-        android:textSize="10sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
