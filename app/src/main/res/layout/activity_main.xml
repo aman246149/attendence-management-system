@@ -52,7 +52,7 @@
             android:textStyle="bold" />
 
         <RadioButton
-            android:id="@+id/teacherid"
+            android:id="@+id/adminteachernameid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Teacher"

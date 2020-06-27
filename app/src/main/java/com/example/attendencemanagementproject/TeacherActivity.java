@@ -19,8 +19,7 @@ public class TeacherActivity extends AppCompatActivity {
     boolean passwardchecker;
     boolean id_checker;
 
-    Database_Handler_Teacher db=new Database_Handler_Teacher(TeacherActivity.this);
-
+Database_Handler_Teacher db=new Database_Handler_Teacher(TeacherActivity.this);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
